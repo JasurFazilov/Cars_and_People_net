@@ -84,7 +84,7 @@ class CarProductShop(Base):
     product_qty = Column(Integer)
     car_id = Column(Integer, ForeignKey('user_cars.car_id'))
 
-    car_fk = relationship(UserCar, lazy='subquery')
+    car_fk = relationship(UserCar, lazy='subquery', foreign_keys=[car_id])
 
 
 
@@ -96,5 +96,5 @@ class CarShop(Base):
     car_id = Column(Integer, ForeignKey('user_cars.car_id'))
     user_id = Column(Integer, ForeignKey('users.user_id'))
 
-    car_fk = relationship(UserCar, lazy='subquery')
-    user_fk = relationship(User, lazy='subquery')
+    car_fk = relationship(UserCar, lazy='subquery', foreign_keys=[car_id])
+    user_fk = relationship(User, lazy='subquery', foreign_keys=[user_id])

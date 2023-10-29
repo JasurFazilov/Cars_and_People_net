@@ -8,6 +8,7 @@ from photo_part.photo_partapi import photo_router
 from posts.post_api import posts_router
 from profiles.profiles_api import profiles_router
 from carshop.carshop_api import carshop_router
+from carprodshop.carprodshop_api import shop_router
 
 
 from database import Base, engine
@@ -28,3 +29,4 @@ app.include_router(photo_router)
 app.include_router(posts_router)
 app.include_router(profiles_router)
 app.include_router(carshop_router)
+app.include_router(shop_router)
